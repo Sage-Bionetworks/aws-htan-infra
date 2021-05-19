@@ -1,0 +1,4 @@
+project_code: aws-htan-infra
+profile: {{ var.profile | default() }}
+region: {{ var.region | default("us-east-1") }}
+aws_infra_templates_root_url: https://raw.githubusercontent.com/Sage-Bionetworks/aws-infra
