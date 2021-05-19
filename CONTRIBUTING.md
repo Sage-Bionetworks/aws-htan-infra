@@ -18,9 +18,9 @@ For more information on how this repository was set up, check out this [**Conflu
    pipenv run pre-commit install
    ```
 
-4. Create an IAM user with programmatic access using the AWS Management Console accessible via JumpCloud. 
+4. Create an IAM user with programmatic access using the AWS Management Console accessible via JumpCloud.
 
-5. Configure a profile with the AWS CLI. 
+5. Configure a profile with the AWS CLI.
 
    ```
    aws configure --profile <aws_profile>
