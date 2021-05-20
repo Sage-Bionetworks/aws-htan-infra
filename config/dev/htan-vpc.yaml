@@ -1,0 +1,12 @@
+template_path: remote/vpc-mini.yaml
+stack_name: htan-vpc
+stack_tags:
+  Department: "CompOnc"
+  Project: "htan"
+  OwnerEmail: "bruno.grande@sagebase.org"
+parameters:
+  VpcName: htan-vpc
+  VpcSubnetPrefix: "10.255.31"
+hooks:
+  before_launch:
+    - !cmd "wget {{stack_group_config.aws_infra_templates_root_url}}/v0.2.13/templates/VPC/vpc-mini.yaml -N -P templates/remote"
