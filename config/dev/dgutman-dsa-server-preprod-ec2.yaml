@@ -16,12 +16,7 @@ parameters:
   KeyName: "EmoryHealthcare-dgutman"  # Imported via AWS Management Console
   VpcName: "htan-vpc"
   VpcSubnet: "PublicSubnet"
-  JcConnectKey: !ssm "/infra/JcConnectKey"
-  JcServiceApiKey: !ssm "/infra/JcServiceApiKey"
-  JcSystemsGroupId: !ssm "/infra/JcSystemsGroupId"
 
 hooks:
   before_launch:
     - !cmd "wget {{stack_group_config.aws_infra_templates_root_url}}/v0.2.13/templates/managed-ec2-linux-v2.j2 -N -P templates/remote"
-  after_create:
-    - !ec2_notify "{{stack_group_config.aws_account_name}} {{stack_group_config.aws_account_email}}"
