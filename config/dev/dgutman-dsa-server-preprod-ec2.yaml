@@ -1,6 +1,6 @@
 # This stack is based on `config/prod/dgutman-htan-new2-ec2.yaml`
 # in https://github.com/Sage-Bionetworks/sandbox-provisioner/
-template_path: "remote/managed-ec2-linux-v2.j2"
+template_path: "managed-ec2-linux-htan.j2"
 stack_name: "dgutman-dsa-server-preprod-ec2"
 
 sceptre_user_data:
@@ -16,7 +16,3 @@ parameters:
   KeyName: "EmoryHealthcare-dgutman"  # Imported via AWS Management Console
   VpcName: "htan-vpc"
   VpcSubnet: "PublicSubnet"
-
-hooks:
-  before_launch:
-    - !cmd "wget {{stack_group_config.aws_infra_templates_root_url}}/v0.2.13/templates/managed-ec2-linux-v2.j2 -N -P templates/remote"
