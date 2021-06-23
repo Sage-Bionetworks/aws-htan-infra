@@ -1,0 +1,19 @@
+template_path: "remote/basic-ec2.j2"
+stack_name: "dsa-prototype-ec2"
+dependencies:
+  - "dev/htan-vpc.yaml"
+
+parameters:
+  InstanceType: "i3en.2xlarge"
+  VpcId: !stack_output_external "htan-vpc::VPCId"
+  SubnetId: !stack_output_external "htan-vpc::PrivateSubnet"
+  EncryptVolume: "true"
+  VolumeSize: "1000"
+stack_tags:
+  Department: "CompOnc"
+  Project: "htan"
+  OwnerEmail: "bruno.grande@sagebase.org"
+
+hooks:
+  before_launch:
+    - !cmd "wget {{stack_group_config.aws_infra_templates_root_url}}/v0.2.15/templates/EC2/basic-ec2.j2 -N -P templates/remote"
