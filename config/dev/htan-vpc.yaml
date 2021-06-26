@@ -9,4 +9,5 @@ parameters:
   VpcSubnetPrefix: "10.255.31"
 hooks:
   before_launch:
+    - !cmd "mkdir -p templates/remote/"
     - !cmd "wget {{stack_group_config.aws_infra_templates_root_url}}/v0.2.13/templates/VPC/vpc-mini.yaml -O templates/remote/vpc-mini.yaml"

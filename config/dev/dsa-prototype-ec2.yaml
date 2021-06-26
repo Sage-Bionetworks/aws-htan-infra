@@ -16,4 +16,5 @@ stack_tags:
 
 hooks:
   before_launch:
+    - !cmd "mkdir -p templates/remote/"
     - !cmd "wget {{stack_group_config.aws_infra_templates_root_url}}/v0.2.15/templates/EC2/basic-ec2.j2 -O templates/remote/basic-ec2.j2"
