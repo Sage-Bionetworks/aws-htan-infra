@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Assume AWS Role
+      - name: Assume AWS role
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.CI_AWS_ACCESS_KEY_ID }}
@@ -27,6 +27,8 @@ jobs:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::888810830951:role/htan-dev-ci-service-account-ServiceRole-1I0ERPZD8ZKDS
           role-duration-seconds: 1200
+      - name: Create directory for remote sceptre templates
+        run:  mkdir -p templates/remote/
       - name: Deploy 'dev' configuration
         uses: Sceptre/github-ci-action@v2.1.0
         with:
