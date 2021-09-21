@@ -8,6 +8,7 @@ sceptre = "2.5.0"
 
 [dev-packages]
 pre-commit = "*"
+cfn-lint = "*"
 
 [requires]
 python_version = "3.8"
