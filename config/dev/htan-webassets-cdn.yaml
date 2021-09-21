@@ -1,0 +1,11 @@
+template_path: htan-webassets-cdn.yaml
+stack_name: htan-webassets-cdn
+stack_tags:
+  Department: "CompOnc"
+  Project: "htan"
+  OwnerEmail: "jason.hwee@sagebase.org"
+
+parameters:
+  S3BucketName: htan-assets
+  S3LoggingBucketName: htan-logging
+  OAIEnabled: "yes"
