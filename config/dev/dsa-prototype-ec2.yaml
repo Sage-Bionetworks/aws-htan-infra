@@ -1,6 +1,6 @@
 template:
-  type: http
-  url: {{stack_group_config.aws_infra_templates_root_url}}/v0.2.15/templates/EC2/basic-ec2.j2
+  type: "http"
+  url: "{{stack_group_config.aws_infra_templates_root_url}}/v0.2.15/templates/EC2/basic-ec2.j2"
 stack_name: "dsa-prototype-ec2"
 dependencies:
   - "dev/htan-vpc.yaml"

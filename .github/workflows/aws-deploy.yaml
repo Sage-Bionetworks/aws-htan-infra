@@ -28,9 +28,9 @@ jobs:
           role-to-assume: arn:aws:iam::888810830951:role/htan-dev-ci-service-account-ServiceRole-1I0ERPZD8ZKDS
           role-duration-seconds: 1200
       - name: Create directory for remote sceptre templates
-        run:  mkdir -p templates/remote/
+        run: mkdir -p templates/remote/
       - name: Deploy 'dev' configuration
-        uses: Sceptre/github-ci-action@v2.1.0
+        uses: Sceptre/github-ci-action@v2.2.0
         with:
-          sceptre_version: 2.5.0
+          sceptre_version: 2.7.1
           sceptre_subcommand: launch --yes dev

@@ -1,6 +1,6 @@
 template:
-  type: http
-  url: {{stack_group_config.aws_infra_templates_root_url}}/v0.2.13/templates/VPC/vpc-mini.yaml
+  type: "http"
+  url: "{{stack_group_config.aws_infra_templates_root_url}}/v0.2.13/templates/VPC/vpc-mini.yaml"
 stack_name: htan-vpc
 stack_tags:
   Department: "CompOnc"
