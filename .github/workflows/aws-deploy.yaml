@@ -30,7 +30,7 @@ jobs:
       - name: Create directory for remote sceptre templates
         run: mkdir -p templates/remote/
       - name: Deploy 'dev' configuration
-        uses: Sceptre/github-ci-action@v2.2.0
+        uses: Sceptre/github-ci-action@v2.3.0
         with:
           sceptre_version: '4.5.2'
           sceptre_subcommand: launch --yes dev
